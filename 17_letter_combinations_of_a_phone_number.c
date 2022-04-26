@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define DEBUG 1
+#define DEBUG 0
 /**
  * Note: The returned array must be malloced, assume caller calls free().
  */
@@ -37,7 +37,6 @@ typedef struct tele_button_hdl {
 } tele_button_hdl_t;
 
 
-
 void show(tele_button_t **pp_tele_button, char*tmp, char **out, int *out_idx, int num, int total_num)
 {
     if (num == total_num) {
@@ -52,7 +51,7 @@ void show(tele_button_t **pp_tele_button, char*tmp, char **out, int *out_idx, in
             if ((num+1) == total_num) {
                 strcpy(out[(*out_idx)], tmp);
 #if (DEBUG)
-                // printf("s = %s\n", out[out_idx]);
+                printf("s = %s\n", out[*out_idx]);
 #endif
                 (*out_idx)++;
             }
